@@ -1,11 +1,11 @@
 import React from 'react';
 import './style.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Form from './components/form/form';
 
 function App() {
   return (
-    <div className="App">
-
+    <div>
+      <Form />
     </div>
   );
 }
