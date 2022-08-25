@@ -5,36 +5,27 @@ import style from './form.module.css';
 
 function Form (){
 
-    const [name, setName] = useState("");
-    const  [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [password, setPassword] = useState("");
+    const [user, setUser] = useState({name:'', email:'',phone:'', password:''});
+    const {name, email, phone, password} = user;
 
     const handleNameChange = (e) =>
         // console.log(e.target.value);
-        setName(e.target.value);
+        setUser({name:e.target.value, email, phone, password});
 
         const handleEmailChange = (e) =>
         // console.log(e.target.value);
-        setEmail(e.target.value);
+        setUser({name, email:e.target.value, phone, password});
 
         const handlePhoneChange = (e) =>
-        setPhone(e.target.value);
+        setUser({name, email, phone:e.target.value, password});
 
         const handlePasswordChange = (e) => 
         // console.log(e.target.value);
-        setPassword(e.target.value);
+        setUser({name, email, phone, password:e.target.value});
 
         const handleSubmit = (e) => {
         console.log("form is submitted");
-        let userInfo = {
-            name,
-            Email : email,
-            Phone : phone,
-            password
-
-        }
-        console.log(userInfo);
+        console.log(user);
         e.preventDefault();
         };
     return(
